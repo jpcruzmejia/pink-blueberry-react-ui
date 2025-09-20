@@ -86,56 +86,256 @@ const HomePage = () => {
         </div>
       </section>
       
-      {/* Services Preview */}
-      <section className="py-16 bg-white">
+      {/* Services Preview - Enhanced with Images */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif font-bold text-gray-900 mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif font-bold text-gray-900 mb-4">
               Our Luxury Services
             </h2>
-            <p className="text-lg text-gray-600">
-              Indulge in our premium beauty and wellness treatments
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Experience our comprehensive range of premium beauty and wellness treatments, 
+              designed to nurture your body and soul in our serene sanctuary
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Service Cards with brand colors */}
-            <div className="card-service text-center group">
-              <div className="w-16 h-16 bg-brand-pink/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-pink/20 transition-colors">
-                <div className="w-8 h-8 bg-brand-pink rounded-full"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Hair Services Card */}
+            <div className="card-service text-center group relative overflow-hidden">
+              <div className="relative mb-6">
+                <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
+                  <img 
+                    src="/assets/images/hairservices1.png" 
+                    alt="Hair Services"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-pink rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-6 h-6 bg-white rounded-full"></div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Hair Services</h3>
-              <p className="text-gray-600 mb-4">
-                Cuts, color, styling, and treatments for every hair type
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Hair Services</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Expert cuts, vibrant color, sophisticated styling, and restorative treatments 
+                tailored to enhance your natural beauty
               </p>
-              <Button variant="ghost" size="sm">Learn More</Button>
+              <div className="mb-6">
+                <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-500">
+                  <span className="px-3 py-1 bg-pink-50 text-pink-600 rounded-full">Cuts & Styling</span>
+                  <span className="px-3 py-1 bg-pink-50 text-pink-600 rounded-full">Color & Highlights</span>
+                  <span className="px-3 py-1 bg-pink-50 text-pink-600 rounded-full">Treatments</span>
+                </div>
+              </div>
+              <Button as={Link} to="/booking" variant="ghost" size="sm" 
+                className="text-brand-pink hover:bg-brand-pink hover:text-white"
+              >
+                Book Hair Service
+              </Button>
             </div>
             
-            <div className="card-service text-center group">
-              <div className="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-brand-blue/20 transition-colors">
-                <div className="w-8 h-8 bg-brand-blue rounded-full"></div>
+            {/* Nail Care Card */}
+            <div className="card-service text-center group relative overflow-hidden">
+              <div className="relative mb-6">
+                <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
+                  <img 
+                    src="/assets/images/nailcare.png" 
+                    alt="Nail Care Services"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-6 h-6 bg-white rounded-full"></div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Nail Care</h3>
-              <p className="text-gray-600 mb-4">
-                Manicures, pedicures, and nail art by expert technicians
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Nail Care</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Luxurious manicures, rejuvenating pedicures, and artistic nail designs 
+                crafted by our skilled technicians
               </p>
-              <Button variant="ghost" size="sm">Learn More</Button>
+              <div className="mb-6">
+                <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-500">
+                  <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full">Manicures</span>
+                  <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full">Pedicures</span>
+                  <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full">Nail Art</span>
+                </div>
+              </div>
+              <Button as={Link} to="/booking" variant="ghost" size="sm"
+                className="text-brand-blue hover:bg-brand-blue hover:text-white"
+              >
+                Book Nail Service
+              </Button>
             </div>
             
-            <div className="card-service text-center group">
-              <div className="w-16 h-16 bg-gradient-to-br from-brand-pink/10 to-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-8 h-8 bg-brand-gradient rounded-full"></div>
+            {/* Spa Treatments Card */}
+            <div className="card-service text-center group relative overflow-hidden">
+              <div className="relative mb-6">
+                <div className="w-full h-48 rounded-xl overflow-hidden mb-4">
+                  <img 
+                    src="/assets/images/spa.png" 
+                    alt="Spa Treatments"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-4 w-12 h-12 bg-brand-gradient rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-6 h-6 bg-white rounded-full"></div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Spa Treatments</h3>
-              <p className="text-gray-600 mb-4">
-                Facials, massages, and wellness therapies for total relaxation
+              <h3 className="text-2xl font-semibold text-gray-900 mb-3">Spa Treatments</h3>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                Rejuvenating facials, therapeutic massages, and holistic wellness therapies 
+                for complete mind-body restoration
               </p>
-              <Button variant="ghost" size="sm">Learn More</Button>
+              <div className="mb-6">
+                <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-500">
+                  <span className="px-3 py-1 bg-gradient-to-r from-pink-50 to-blue-50 text-gray-600 rounded-full">Facials</span>
+                  <span className="px-3 py-1 bg-gradient-to-r from-pink-50 to-blue-50 text-gray-600 rounded-full">Massages</span>
+                  <span className="px-3 py-1 bg-gradient-to-r from-pink-50 to-blue-50 text-gray-600 rounded-full">Wellness</span>
+                </div>
+              </div>
+              <Button as={Link} to="/booking" variant="ghost" size="sm"
+                className="text-transparent bg-brand-gradient bg-clip-text hover:bg-brand-gradient hover:text-white hover:bg-clip-border"
+              >
+                Book Spa Service
+              </Button>
+            </div>
+          </div>
+          
+          {/* Service Statistics */}
+          <div className="mt-16 pt-16 border-t border-gray-100">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-brand-pink mb-2">500+</div>
+                <div className="text-gray-600">Happy Clients</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-brand-blue mb-2">15+</div>
+                <div className="text-gray-600">Expert Stylists</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-brand-pink mb-2">25+</div>
+                <div className="text-gray-600">Premium Services</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-brand-blue mb-2">5★</div>
+                <div className="text-gray-600">Average Rating</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
       
+      {/* About/Story Section */}
+      <section className="py-20 bg-cream">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Story Content */}
+            <div>
+              <div className="mb-6">
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-pink-100 to-blue-100 text-gray-700 border border-pink-200">
+                  <div className="w-2 h-2 bg-gradient-to-r from-pink-500 to-blue-500 rounded-full mr-2"></div>
+                  Our Story
+                </span>
+              </div>
+              
+              <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
+                Where Beauty Meets 
+                <span className="text-transparent bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text">
+                  Organic Wellness
+                </span>
+              </h2>
+              
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  Founded on the belief that true beauty radiates from within, The Pink Blueberry 
+                  combines the artistry of premium salon services with the nourishing power of 
+                  organic wellness. Our journey began with a simple vision: create a sanctuary 
+                  where self-care becomes a luxurious, holistic experience.
+                </p>
+                
+                <p>
+                  Every service we provide, from precision haircuts to rejuvenating spa treatments, 
+                  is infused with our commitment to natural, sustainable beauty. Our curated selection 
+                  of organic lunch soups reflects this philosophy—nourishing your body from the inside 
+                  while we pamper you on the outside.
+                </p>
+                
+                <p>
+                  Step into our serene space and discover a new standard of luxury—one that honors 
+                  both your beauty and your well-being, naturally.
+                </p>
+              </div>
+              
+              {/* Mission Values */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-pink-500 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Organic Philosophy</h4>
+                    <p className="text-sm text-gray-600">Natural ingredients and sustainable practices in everything we do</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Holistic Wellness</h4>
+                    <p className="text-sm text-gray-600">Beauty treatments that nurture both body and spirit</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-pink-500 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Expert Artistry</h4>
+                    <p className="text-sm text-gray-600">Skilled professionals dedicated to your unique beauty vision</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Luxury Experience</h4>
+                    <p className="text-sm text-gray-600">Every visit designed to be a moment of pure indulgence</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Visual Element */}
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <div className="aspect-[4/3] bg-gradient-to-br from-pink-100 via-cream to-blue-100 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl font-serif font-bold text-transparent bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text mb-4">
+                      The Pink
+                    </div>
+                    <div className="text-4xl font-serif font-bold text-transparent bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text">
+                      Blueberry
+                    </div>
+                    <div className="mt-4 text-sm font-medium text-gray-600 tracking-wider uppercase">
+                      SALON
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-pink-200 to-pink-300 rounded-full opacity-70 shadow-lg"></div>
+              <div className="absolute -bottom-6 -right-6 w-20 h-20 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full opacity-60 shadow-xl"></div>
+              <div className="absolute top-1/2 -right-2 w-8 h-8 bg-gradient-to-br from-pink-300 to-pink-400 rounded-full opacity-80"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

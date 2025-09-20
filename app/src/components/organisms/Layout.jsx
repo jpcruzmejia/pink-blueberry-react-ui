@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Button from '../atoms/Button'
+import ShoppingCart from '../molecules/ShoppingCart'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -56,8 +57,9 @@ const Layout = ({ children }) => {
                   </div>
                 </div>
                 
-                {/* Desktop CTA - Lovable style button */}
-                <div className="hidden md:block">
+                {/* Desktop CTA & Cart - Lovable style */}
+                <div className="hidden md:flex items-center space-x-4">
+                  <ShoppingCart />
                   <Button 
                     as={Link} 
                     to="/booking"
@@ -67,8 +69,9 @@ const Layout = ({ children }) => {
                   </Button>
                 </div>
                 
-                {/* Mobile menu button */}
-                <div className="md:hidden">
+                {/* Mobile cart & menu */}
+                <div className="md:hidden flex items-center space-x-2">
+                  <ShoppingCart />
                   <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-pink hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-pink">
                     <span className="sr-only">Open main menu</span>
                     {open ? (

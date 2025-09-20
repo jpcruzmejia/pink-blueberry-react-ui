@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './components/organisms/Layout'
 import ScrollToTop from './components/utils/ScrollToTop'
+import { CartProvider } from './context/CartContext'
 import HomePage from './pages/HomePage'
 import BookingPage from './pages/BookingPage'
 import ShopPage from './pages/ShopPage'
@@ -10,18 +11,20 @@ import AboutPage from './pages/AboutPage'
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/booking" element={<BookingPage />} />
-          <Route path="/shop" element={<ShopPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </Layout>
-    </Router>
+    <CartProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/booking" element={<BookingPage />} />
+            <Route path="/shop" element={<ShopPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </CartProvider>
   )
 }
 

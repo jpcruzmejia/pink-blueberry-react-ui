@@ -1,9 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 import Button from '../components/atoms/Button'
 
 const ShopPage = () => {
+  const { addToCart } = useCart()
+  
   const organicSoups = [
     {
+      id: 1,
       name: "Pink Berry Bliss",
       description: "Antioxidant-rich soup with organic berries and healing herbs",
       price: 18,
@@ -11,6 +16,7 @@ const ShopPage = () => {
       image: "/assets/images/soup1.png"
     },
     {
+      id: 2,
       name: "Blue Harmony Bowl",
       description: "Calming blueberry and lavender soup for wellness and relaxation",
       price: 20,
@@ -18,6 +24,7 @@ const ShopPage = () => {
       image: "/assets/images/soup2.png"
     },
     {
+      id: 3,
       name: "Garden Fresh Detox",
       description: "Organic vegetable medley with supergreens and healing spices",
       price: 16,
@@ -25,6 +32,7 @@ const ShopPage = () => {
       image: "/assets/images/soup3.png"
     },
     {
+      id: 4,
       name: "Golden Turmeric Glow",
       description: "Anti-inflammatory golden milk soup with organic coconut",
       price: 19,
@@ -32,6 +40,7 @@ const ShopPage = () => {
       image: "/assets/images/soup4.png"
     },
     {
+      id: 5,
       name: "Protein Power Pink",
       description: "Quinoa and pink bean soup with organic protein blend",
       price: 22,
@@ -39,6 +48,7 @@ const ShopPage = () => {
       image: "/assets/images/soup5.png"
     },
     {
+      id: 6,
       name: "Blue Spirulina Boost",
       description: "Superfood soup with blue spirulina and organic vegetables",
       price: 24,
@@ -121,9 +131,10 @@ const ShopPage = () => {
                       <span className="text-gray-500 text-sm ml-1">per bowl</span>
                     </div>
                     <Button 
-                      className="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300"
+                      onClick={() => addToCart(soup)}
+                      className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
                     >
-                      Order Now
+                      Add to Cart
                     </Button>
                   </div>
                 </div>
@@ -185,14 +196,17 @@ const ShopPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
-              className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              as={Link}
+              to="/booking"
+              className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white px-8 py-4 rounded-full text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
             >
               Book Service + Soup
             </Button>
             <Button 
-              className="border-2 border-gray-700 text-gray-700 hover:bg-gray-700 hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="border-2 border-gradient-to-r from-pink-500 to-blue-500 text-gray-700 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300"
             >
-              Order Soup Only
+              Order Soups Above
             </Button>
           </div>
         </div>
